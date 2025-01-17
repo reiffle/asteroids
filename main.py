@@ -1,20 +1,20 @@
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
-import pygame
+import pygame #always need this, apparently
 from constants import *
+from player import Player #only needed Player, not whole file
 
 def main():
     pygame.init()
-    print ("Starting asteroids!")
-    print (f"Screen width: {SCREEN_WIDTH}")
-    print (f"Screen heighT: {SCREEN_HEIGHT}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock=pygame.time.Clock()
+    ship=Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    dt=0
     while (1):
         for event in  pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        pygame.Surface.fill(screen,(0,0,0))
+        screen.fill("black")
+        ship.draw(screen)
         pygame.display.flip()
+        dt=clock.tick(60)/1000
 
 main()
