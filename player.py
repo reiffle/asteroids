@@ -6,7 +6,7 @@ class Player(CircleShape):
     def __init__(self, x, y):
         #didn't need to separately do x and y since they are in the parent
         super().__init__(x,y,PLAYER_RADIUS)
-        self.rotation=0 #needed to make this .self
+        self.rotation=0 #needed to make this self.rotation
 
 # in the player class
     def triangle(self):
