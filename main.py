@@ -28,7 +28,10 @@ def main():
                 return
         for obj in updatable:
             obj.update(dt)
-
+        for asteroid in asteroids: #I definitely didn't understand this
+            if asteroid.collides_with(ship):
+                print ("Game over!")
+                return
         screen.fill("black")
         for obj in drawable:
             obj.draw(screen)
